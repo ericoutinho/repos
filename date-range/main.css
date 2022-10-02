@@ -1,0 +1,120 @@
+@charset "utf8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --color-background: #102B3F;
+    --color-background-light: #15344b;
+    --color-foreground: #6247AA;
+    --color-foreground-light: #A06CD5;
+    --color-foreground-lightness: #E2CFEA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+}
+
+.frame {
+    width: min(90%, 500px);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    background-color: var(--color-background-light);
+    box-shadow: 0 10px 16px rgba(0,0,0,.2);
+}
+.frame h1 {
+    margin-bottom: 1rem;
+    color: var(--color-foreground-light);
+}
+
+.frame :is(input, label) {
+    display: block;
+    width: 100%;
+}
+
+.frame label {
+    margin-bottom: .25rem;
+    color: var(--color-foreground-lightness);
+}
+
+.frame label i {
+    color: var(--color-foreground);
+}
+
+.frame input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    padding: .35rem;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+    color: var(--color-background);
+}
+
+.frame button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: .45rem .85rem;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    border: none;
+    background-color: var(--color-foreground);
+    color: var(--color-foreground-lightness);
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--color-background);
+}
+
+.frame button:active {
+    box-shadow: 0 2px 0 var(--color-background);
+    transform: translateY(3px);
+}
+
+.frame button:hover {
+    filter: brightness(110%);
+}
+
+.display {
+    width: min(90%, 500px);
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 8px rgba(0,0,0,.1) inset;
+    color: var(--color-foreground-light);
+    text-align: center;
+    
+    transform: translateY(2rem);
+    visibility: hidden;
+    opacity: 0;
+    animation: unset;
+}
+
+.display.show {
+    animation: show .2s forwards;
+}
+
+@keyframes show {
+    100% {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+    }
+}

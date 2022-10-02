@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Range</title>
+
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./bolt-solid.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <div class="frame">
+        <h1><i class="fa-solid fa-caret-right"></i> Date Range</h1>
+        <label for="checkin"><i class="fa-solid fa-circle-arrow-down"></i> Check In</label>
+        <input type="datetime-local" id="checkin" value="2021-10-01T00:00">
+        <label for="checkout"><i class="fa-solid fa-circle-arrow-up"></i> Check Out</label>
+        <input type="datetime-local" id="checkout" value="2022-10-10T00:00">
+        <button><i class="fa-solid fa-bolt"></i> Calculate</button>
+    </div>
+    <div class="display"></div>
+</body>
+</html>
