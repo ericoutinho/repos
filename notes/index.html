@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand"><i class="fa-regular fa-note-sticky"></i> NOTES <small>v1.0</small></div>
+            <div class="search-wrapper">
+                <input type="search" id="input-search" placeholder="Buscar notas" onkeyup="render(event)" onsearch="render(event)">
+            </div>
+            <div class="type-switch-wrapper">
+                <input type="checkbox" id="type-switch">
+                <label for="type-switch">
+                    <i class="fa-solid fa-font fa-lg"></i>
+                    <div class="switch"></div>
+                    <i class="fa-solid fa-font"></i>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <!-- <div class="note">
+            <button class="note__close"><i class="fa-solid fa-square-xmark"></i></button>
+            <div class="note__body">
+                <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta itaque dolorem ratione omnis enim blanditiis nesciunt dolor animi!</p>
+            </div>
+            <div class="note__toolbar">
+                <button type="button" title="Editar esta nota"><i class="fa-solid fa-pen"></i></button>
+                <button type="button" title="Excluir esta nota"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div> -->
+        
+    </main>
+
+    <div class="plus-button">
+        <button type="button" onclick="openModal()"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <div class="overlay">
+        <div class="modal">
+            <form onsubmit="saveNote(event)">
+                <input type="hidden" name="id">
+                <div class="modal__body">
+                    <h2>Criar nova nota</h2>
+                    <div class="input-wrapper">
+                        <label for="title">Título</label>
+                        <input type="text" name="title" placeholder="Escreva um título para a nota">
+                        <small>É necessário informar um título.</small>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="note">Corpo da Nota</label>
+                        <textarea name="body" rows="6" placeholder="Adicione aqui o corpo da nota"></textarea>
+                        <small>Escreva aqui suas anotações.</small>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" name="color" id="blue" value="#add8e6" checked>
+                        <label for="blue" style="--current-color: #add8e6;"></label>
+
+                        <input type="radio" name="color" id="purple" value="#E2CFEA">
+                        <label for="purple" style="--current-color: #E2CFEA;"></label>
+
+                        <input type="radio" name="color" id="yellow" value="#fafad2">
+                        <label for="yellow" style="--current-color: #fafad2;"></label>
+                    </div>
+                </div>
+                <div class="modal__toolbar">
+                    <button class="button button__secondary" type="button" id="button-cancel" onclick="closeModal()"><i class="fa-solid fa-times"></i> Cancelar</button>
+                    <button class="button button__primary" type="submit" id="button-add"><i class="fa-solid fa-plus"></i> Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

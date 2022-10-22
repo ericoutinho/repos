@@ -2,7 +2,6 @@
 
 ## Componentes úteis para projetos do dia-a-dia
 
-TOC
-
 - scroll-progress
 - date-range
+- notes
